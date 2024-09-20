@@ -1,0 +1,53 @@
+/* Container styling */
+.unauthorized-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Adjusts the height to vertically center content */
+  padding: 20px; /* Ensures spacing from all sides */
+  background-color: #f2f2f2; /* Light gray background for contrast */
+}
+
+/* Card styling */
+.unauthorized-card {
+  padding: 40px 30px;
+  text-align: center;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for a modern look */
+  background-color: white;
+}
+
+/* Error icon styling */
+.error-icon {
+  font-size: 60px;
+  color: #ff5252; /* Red color for the lock icon to indicate error */
+  margin-bottom: 20px;
+}
+
+/* Header styling */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+}

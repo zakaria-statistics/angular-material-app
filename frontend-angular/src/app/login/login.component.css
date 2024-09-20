@@ -1,0 +1,26 @@
+.login-container {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+.login-card {
+  width: 600px;
+  padding: 20px 10px 20px 10px;
+}
+
+.login-actions {
+  text-align: end ;
+  margin-top: 20px;
+}

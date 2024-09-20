@@ -1,0 +1,74 @@
+<div class="home-container">
+  <!-- Welcome Message -->
+  <h1>Welcome to My Application</h1>
+
+  <!-- Cards Section -->
+  <div class="card-grid">
+    <!-- Profile Card -->
+    <mat-card class="card" (click)="goToProfile()">
+      <mat-card-header>
+        <mat-card-title>Profile</mat-card-title>
+        <mat-card-subtitle>Manage your profile details</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Update your personal information, change your password, and more.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">View Profile</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Dashboard Card -->
+    <mat-card class="card" (click)="goToDashboard()">
+      <mat-card-header>
+        <mat-card-title>Dashboard</mat-card-title>
+        <mat-card-subtitle>View your performance</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Check your tasks, performance metrics, and recent activity.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="accent">Go to Dashboard</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Logout Card -->
+    <mat-card class="card" (click)="logOut()">
+      <mat-card-header>
+        <mat-card-title>Log Out</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Click here to log out of your account.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn">Log Out</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Home Card -->
+    <mat-card class="card" (click)="gotToHome()">
+      <mat-card-header>
+        <mat-card-title>
+          Home card header
+        </mat-card-title>
+        <mat-card-subtitle>
+          this is an example of card subtitles
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        Here, you can manage your card contents
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">Go to Home</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Latest Updates Section -->
+  <div class="info-section">
+    <h2>Latest Updates</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let update of updates">{{ update }}</mat-list-item>
+    </mat-list>
+  </div>
+</div>

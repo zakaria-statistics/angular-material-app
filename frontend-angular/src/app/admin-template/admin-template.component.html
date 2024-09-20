@@ -1,0 +1,69 @@
+<mat-toolbar color="primary">
+  <!-- Menu Button to Toggle Drawer -->
+  <button mat-icon-button aria-label="Toggle menu" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Application Title -->
+  <span class="toolbar-title">My Application</span>
+
+  <!-- Spacer to Align Buttons to the Right -->
+  <span class="spacer"></span>
+
+  <!-- Navigation Buttons -->
+  <button mat-button aria-label="Home" routerLink="/admin/home">Home</button>
+  <button mat-button aria-label="Profile" routerLink="/admin/profile">Profile</button>
+
+  <!-- Import Dropdown Menu -->
+  <button *ngIf="authService.roles.includes('ADMIN')" mat-button [matMenuTriggerFor]="importMenu" aria-label="Import Menu">
+    Import <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #importMenu>
+    <button mat-menu-item aria-label="Load Students" routerLink="/admin/loadStudents">
+      <mat-icon>person</mat-icon> Load Students
+    </button>
+    <button mat-menu-item aria-label="Load Payments" routerLink="/admin/loadPayments">
+      <mat-icon>payment</mat-icon> Load Payments
+    </button>
+  </mat-menu>
+
+  <!-- Login Button -->
+  <button mat-button *ngIf="authService.isAuthenticated">
+    {{authService.username}}
+  </button>
+  <button mat-raised-button color="accent" aria-label="Logout" (click)="logout()">
+    <mat-icon>login</mat-icon> Logout
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container hasBackdrop="true">
+  <mat-drawer #drawer mode="side" position="start" opened="false" class="card">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/dashboard" style="border: 2px solid gray;">
+          Dashboard
+          <mat-icon>dashboard</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/students" style="border: 2px solid gray;">
+          Students
+          <mat-icon>people</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/payments" style="border: 2px solid gray;">
+          Payments
+          <mat-icon>payment</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content class="container">
+    <div style="min-height: 700px;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
